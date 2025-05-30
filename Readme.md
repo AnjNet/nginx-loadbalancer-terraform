@@ -61,6 +61,8 @@ This Terraform project automates the deployment of a highly available web infras
 git clone https://github.com/YOUR_USERNAME/nginx-loadbalancer-terraform.git
 cd nginx-loadbalancer-terraform
 
+```
+
 ### **Step 2: Edit terraform.tfvars**
 
 Update with your specific values:
@@ -69,10 +71,14 @@ key_name = "YourKeyPairName"        # Your AWS EC2 Key Pair name (case sensitive
 region = "us-east-1"                # AWS region  
 
 ### **Step 3: Initialize Terraform**
+``` bash
 terraform init
 
+```
 ### **Step 4: Apply Terraform Configuration**
+``` bash
 terraform apply -var-file="terraform.tfvars"
+```
 Review the proposed plan.
 
 Type yes to confirm.
