@@ -61,23 +61,23 @@ This Terraform project automates the deployment of a highly available web infras
 git clone https://github.com/YOUR_USERNAME/nginx-loadbalancer-terraform.git
 cd nginx-loadbalancer-terraform
 
-### Step 2: Edit terraform.tfvars
+### **Step 2: Edit terraform.tfvars**
 
 Update with your specific values:
 ami_id = "ami-xxxxxxxxxxxxxxxxx"    # Your custom AMI ID  
 key_name = "YourKeyPairName"        # Your AWS EC2 Key Pair name (case sensitive)  
 region = "us-east-1"                # AWS region  
 
-### Step 3: Initialize Terraform
+### **Step 3: Initialize Terraform**
 terraform init
 
-### Step 4: Apply Terraform Configuration
+### **Step 4: Apply Terraform Configuration**
 terraform apply -var-file="terraform.tfvars"
 Review the proposed plan.
 
 Type yes to confirm.
 
-### Step 5: Access the Application
+### **Step 5: Access the Application**
 Copy the Load Balancer DNS output from the Terraform apply.
 
 Open it in a web browser: http://<load_balancer_dns>
@@ -86,11 +86,11 @@ You should see a simple page displaying the Instance ID of the Nginx server.
 
 Refresh the page to see the Load Balancer switching between the two instances.
 
-### Clean Up Resources
+### **Clean Up Resources**
 To avoid incurring charges, destroy the infrastructure when done:
 terraform destroy -var-file="terraform.tfvars"
 
-### Troubleshooting
+### **Troubleshooting**
 InvalidKeyPair.NotFound — Ensure the key pair name in terraform.tfvars matches exactly the one in your AWS console.
 
 Load Balancer creation delays — AWS may take a few minutes to provision the ALB and associated resources.
@@ -99,7 +99,7 @@ Instance Metadata issues — Check if IMDSv2 is enabled; if so, userdata may nee
 
 Permissions — Make sure your AWS credentials have necessary permissions for all resources used.
 
-### Further Improvements
+### **Further Improvements**
 Add HTTPS support with ACM certificates and ALB listener rules
 
 Use modules for reusability and better organization
